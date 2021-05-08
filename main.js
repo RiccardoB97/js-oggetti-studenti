@@ -37,11 +37,19 @@ var classe = [
         eta: 26
     }
 ];
+//Dare la possibilità all’utente, attraverso 3 prompt(), di aggiungere un nuovo oggetto studente inserendo nell’ordine: nome, cognome e età.
 
 var arrayStudentiEl = document.getElementById('array_studenti');
-var user_name = prompt('Inserisci il nome: ');
-var user_surname = prompt('Inserisci il cognome: ');
-var user_age = prompt("Inserisci l'età");
+var userName = prompt('Inserisci il nome: ');
+var userSurname = prompt('Inserisci il cognome: ');
+var userAge = prompt("Inserisci l'età");
+var userObject = {
+    nome: userName.charAt(0).toUpperCase() + userName.slice(1),
+    cognome: userSurname.charAt(0).toUpperCase() + userSurname.slice(1),
+    eta: userAge
+}
+
+classe.push(userObject)
 
 //Ciclare su tutti gli studenti e stampare per ognuno di essi, nome e cognome.
 for (var i = 0; i < classe.length; i++) {
@@ -50,4 +58,6 @@ for (var i = 0; i < classe.length; i++) {
     `)
 }
 
-//Dare la possibilità all’utente, attraverso 3 prompt(), di aggiungere un nuovo oggetto studente inserendo nell’ordine: nome, cognome e età.
+
+
+
